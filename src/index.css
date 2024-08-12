@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="number"] {
+    -moz-appearance: textfield; 
+    -webkit-appearance: none; 
+    appearance: none; 
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input {-webkit-appearance: none; box-shadow: none !important; }
+:-webkit-autofill { color: #fff !important; }
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-track{
+    background: white;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+}
+
+::-webkit-scrollbar-thumb{
+    background:#1F1E30;
+    border-radius: 15px;
+
+}
+.activeSaidbar{
+    background-color: #D8F275 !important;
+    color: black;
+}
+body{
+    background-color: #F7F7F5 !important;
+    /* background-color: black; */
+}
+
+.NavBarModal{
+    transform: translateY(-160%);
+	transition: all 1.2s ease;
+    z-index: 11;
+}
+.NavBarActive{
+    transform: translateY(0);
+}
+.WorkersModal{
+    transform: translateY(-160%);
+	transition: all 1.2s ease;
+    z-index: 11;
+}
+.WorkersModalActive{
+    transform: translateY(0);
+}
+.SamllModalActive{
+    display: block !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: end;
+    gap: 2px;
+    /* background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+}
+.smallModal{
+    background-image: url('../public//images//WorkersModal.png');
+}
+.Sidbar{
+    /* display: none !important; */
+    /* height: 100vh !important; */
+}
+.accordion-content {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height 0.5s ease-out !important;
+        padding: 0 10px;
+  }
+  
+  .accordion-content.open {
+    max-height: 500px !important; /* Установите максимальную высоту в зависимости от вашего контента */
+    padding: 10px !important;
+  }
+  

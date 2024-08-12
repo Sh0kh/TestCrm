@@ -1,0 +1,269 @@
+@media(max-width:1400px){
+    .Finance__Wrapper h2{
+        font-size: 28px !important  ;
+    }
+}
+@media(max-width:1260px){
+    .Dashboard{
+        padding-right: 0px !important;
+    }
+   .Project__title{
+    flex-direction: column;
+    justify-content: start !important;
+    gap: 10px;
+    margin-bottom: 25px;
+   }
+   .Project__title h1{
+    text-align: start !important;
+    display: block;
+    width: 100%;
+   }
+
+}
+@media(max-width:1200px){
+    .Dashboard__wrapper{
+        gap: 5px !important;
+    }
+    .Dashboard__card span:nth-child(1){
+        font-size: 46px;
+    }
+    .Dashboard__card span:nth-child(2){
+        font-size: 15px;
+    }
+    
+}
+@media(max-width:1120px){
+    .Finance__Wrapper h2{
+        font-size: 22px !important  ;
+    }
+}
+@media(max-width:1100px){
+    .Dashboard__wrapper{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .Dashboard__grid{
+        display: flex !important ;
+       justify-content: space-between !important;
+
+    }
+    .Dashboard__wrapper{
+        margin-top: 0px !important;
+    }
+    .Dashboard__card2{
+        margin-top: 0px !important;
+    }
+    .Dashboard__card span:nth-child(1){
+        font-size: 86px;
+        margin-bottom: 20px;
+    }
+    .WorkersTable{
+        width: 100% !important;
+    }
+    .smallModal{
+        transform: rotate(-90deg);
+        top: 110px   !important;
+        right:  -10px   !important;
+    }
+    .smallModal button{
+        transform: rotate(90deg);
+    }
+    
+}
+@media(max-width:1024px){
+    .NavBar label{
+        width: 100%;
+    }
+    .Project__title form{
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+}
+@media(max-width:950px){
+    .login-Form{
+        margin-left: 0 !important;
+        margin:0 auto !important;
+    }
+    .MainLayout{
+        padding: 5px !important;
+        padding-top: 10px !important;
+        gap: 10px !important;
+    }
+}
+@media(max-width:860px){
+    .Finance__Wrapper h2{
+        font-size: 16px !important  ;
+    }
+    .Finance__Wrapper span{
+        font-size: 12px;
+    }
+}
+@media(max-width:768px){
+    .Sidbar{
+        display: none !important;
+    }
+    .NavBar form{
+        display: none;
+    }
+    .NavbarBtn{
+        display: none;
+    }
+    .burger{
+        display: block !important;
+    }
+    .ProfileWrapper{
+        margin: 0 auto;
+        margin-top: 100px !important;
+        width: 100%;
+    }
+    .Profile h1{
+        display: none;
+    }
+    .Finance__Wrapper h2{
+        font-size: 22px !important  ;
+    }
+}
+@media(max-width:700px){
+    .Login-Foto{
+        display: none !important;
+    }
+    .login-Form{
+        text-align: center;
+    }
+    .login-Form button{
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    .Finance__Wrapper{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .Finance__Wrapper h2{
+        font-size: 40px !important  ;
+    }
+    .Finance__Wrapper div{
+        width: 80%;
+    }
+    .FinanceTable{
+        margin: 0 auto;
+    }
+    .FinanceTable{
+        overflow-x: scroll !important;
+        width: 100% !important;
+    }
+    .FinanceTable table{
+            width: 400px !important;
+    }
+  
+}
+@media(max-width:640px){
+    .WorkersTable{
+        overflow-x: scroll;
+    }
+    .WorkersTable table{
+        width: 700px;
+        margin-top: 10px !important;
+    }
+   .SmallModal__Btn{
+    display: none;
+   }
+   .SmallModal__Btn__mobile{
+    display: block !important;
+    display: flex !important;
+   }
+}
+@media(max-width:590px){
+    .Dashboard__grid{
+        flex-direction: column;
+        gap: 15px;
+        justify-content: center;
+    }
+    .DashboardTable{
+        overflow-x: scroll;
+        
+    }
+    .Dashboard table{
+        width: 600px;   
+    }
+
+}
+@media(max-width:550px){
+    .ProfileWrapper{
+        width: 100% !important;
+    }
+    .ProfilGrid span{
+        font-size: 12px;
+        width: 100%;
+    }
+    .ProfilGrid h2{
+        font-size:16px ;
+    }
+    .Finance__Wrapper div{
+        width: 95%;
+    }
+    .Project__title__wrapper{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .Project__title__wrapper button{
+        width: 100%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+    .ProjectTable{
+        overflow-x: scroll;
+    }
+    .ProjectTable table{
+        width: 600px;
+    }
+}
+@media(max-width:400px){
+    .Finance__Wrapper h2{
+        font-size: 30px !important  ;
+    }
+}
+@media(max-width:425px){
+    .ProfileWrapper img{
+        left: 30%;
+    }
+}
+@media(max-width:376px){
+    .ProfilGrid{
+        grid-template-columns: repeat(1,1fr) !important;
+    }
+}
+@media(max-width:350px){
+    .login-Form label{
+        width: 100%;
+    }
+    .login-Form p{
+        width: 100%;
+    }
+    .login-Form h1{
+        font-size: 50px;
+    }
+    .login-Form button span{
+        font-size:20px;
+    }
+    .Worker__title{
+        flex-direction: column;
+        gap: 20px;
+        }
+        .Project__title__grid{
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+}
+@media(max-width:325px){
+    .Finance__Wrapper h2{
+        font-size: 20px !important  ;
+    }
+}
+@media(max-width:300px){
+    .Dashboard__card, .Dashboard__card2{
+        width: 100%;
+    }
+}
