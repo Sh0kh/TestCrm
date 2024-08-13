@@ -3,6 +3,22 @@
         font-size: 28px !important  ;
     }
 }
+@media(max-width:1340px){
+    .Finance__card h2{
+        font-size: 25px !important;
+    }
+    .Finance__card{
+        width: 300px !important;
+    }
+}
+@media(max-width:1240px){
+    .Finance__card{
+        width: 250px !important;
+    }
+    .Finance__Wrapper{
+        gap:10px !important;
+    }
+}
 @media(max-width:1260px){
     .Dashboard{
         padding-right: 0px !important;
@@ -68,7 +84,16 @@
     .smallModal button{
         transform: rotate(90deg);
     }
-    
+    .Finance__Wrapper{
+        flex-wrap: wrap;
+    }
+    .Finance__card{
+        width: 300px !important;
+    }
+
+    .Finance__card h2{
+        font-size: 30px !important;
+    }
 }
 @media(max-width:1024px){
     .NavBar label{
@@ -91,12 +116,7 @@
     }
 }
 @media(max-width:860px){
-    .Finance__Wrapper h2{
-        font-size: 16px !important  ;
-    }
-    .Finance__Wrapper span{
-        font-size: 12px;
-    }
+ 
 }
 @media(max-width:768px){
     .Sidbar{
@@ -122,6 +142,16 @@
     .Finance__Wrapper h2{
         font-size: 22px !important  ;
     }
+    .Finance__Wrapper{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .Finance__card{
+        width: 95% !important;
+    }
+    .Finance__card h2{
+        font-size: 40px !important;
+    }
 }
 @media(max-width:700px){
     .Login-Foto{
@@ -140,9 +170,6 @@
     }
     .Finance__Wrapper h2{
         font-size: 40px !important  ;
-    }
-    .Finance__Wrapper div{
-        width: 80%;
     }
     .FinanceTable{
         margin: 0 auto;
@@ -197,9 +224,6 @@
     }
     .ProfilGrid h2{
         font-size:16px ;
-    }
-    .Finance__Wrapper div{
-        width: 95%;
     }
     .Project__title__wrapper{
         flex-wrap: wrap;

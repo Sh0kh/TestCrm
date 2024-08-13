@@ -1,25 +1,32 @@
 import React, { useState, useRef, useEffect } from 'react';
 import WorkersFoto from '/images/WorkersFoto.svg';
-// import ModalFoto from '../../public/images/WorkersModal.png'
 function Workers() {
   const [isModal, setModal] = useState(false);
+  const [isModalDelte, setModalDelate] = useState(false);
   const [isSmallModal, setSmallModal] = useState(false)
   const modalRef = useRef(null);
+  const modalRef2 = useRef(null);
   const OpenSmallModal = () =>{
     setSmallModal(!isSmallModal)
   }
   const OpenModal = () => {
     setModal(!isModal);
   };
+  const OpenModal2 = () => {
+    setModalDelate(!isModalDelte);
+  };
 
   const handleClickOutside = (e) => {
     if (modalRef.current && !modalRef.current.contains(e.target)) {
       setModal(false);
     }
+    if (modalRef2.current && !modalRef2.current.contains(e.target)) {
+      setModalDelate(false);
+    }
   };
 
   useEffect(() => {
-    if (isModal) {
+    if (isModal || isModalDelte) {
       document.addEventListener('mousedown', handleClickOutside);
     } else {
       document.removeEventListener('mousedown', handleClickOutside);
@@ -27,7 +34,7 @@ function Workers() {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isModal]);
+  }, [isModal, isModalDelte]);
 
   return (
     <div className='Workers w-full relative'>
@@ -123,7 +130,7 @@ function Workers() {
                       <button className='flex items-center justify-center p-[5px] bg-[#DDDDF5] rounded-[4px]'>
                       <svg className='text-[25px]' xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M14 14.252v2.09A6 6 0 0 0 6 22H4a8 8 0 0 1 10-7.749M12 13c-3.315 0-6-2.685-6-6s2.685-6 6-6s6 2.685 6 6s-2.685 6-6 6m0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4s-4 1.79-4 4s1.79 4 4 4m6 6v-3h2v3h3v2h-3v3h-2v-3h-3v-2z"></path></svg>
                       </button>
-                      <button className='flex items-center justify-center bg-[#FEE2D6] p-[5px] rounded-[4px]'>
+                      <button onClick={OpenModal2} className='flex items-center justify-center bg-[#FEE2D6] p-[5px] rounded-[4px]'>
                       <svg className='text-[25px]' xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" d="M7 3h2a1 1 0 0 0-2 0M6 3a2 2 0 1 1 4 0h4a.5.5 0 0 1 0 1h-.564l-1.205 8.838A2.5 2.5 0 0 1 9.754 15H6.246a2.5 2.5 0 0 1-2.477-2.162L2.564 4H2a.5.5 0 0 1 0-1zm1 3.5a.5.5 0 0 0-1 0v5a.5.5 0 0 0 1 0zM9.5 6a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 .5-.5m-4.74 6.703A1.5 1.5 0 0 0 6.246 14h3.508a1.5 1.5 0 0 0 1.487-1.297L12.427 4H3.573z"></path></svg>
                       </button>
                   </div>  
@@ -161,6 +168,21 @@ function Workers() {
               </span>
             </button>
           </form>
+        </div>
+      </div>
+      <div className={`WorkersModal p-[5px] bg-[#d9d9d9bc] fixed inset-0 flex items-center justify-center ${isModalDelte ? 'WorkersModalActive' : ''}`}>
+        <div ref={modalRef2} className='Modal bg-customBg rounded-[16px] p-[30px] w-[360px] text-center'>
+          <h2 className='text-btnColor text-[26px] font-[600]'>
+            Xodim qo’shish
+          </h2>
+         <div className='flex items-center justify-center gap-[20px] mt-[20px]'>
+            <button onClick={OpenModal2} className='text-black bg-btnColor px-[20px] py-[5px] rounded-[16px] border-2 border-btnColor hover:bg-transparent hover:text-white transition duration-500 '>
+              Ha
+            </button>
+            <button onClick={OpenModal2} className='text-black bg-btnColor px-[20px] py-[5px] rounded-[16px] border-2 border-btnColor hover:bg-transparent hover:text-white transition duration-500 '>
+              Yoq
+            </button>
+         </div>
         </div>
       </div>
     </div>

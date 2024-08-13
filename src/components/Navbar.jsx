@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Language from  '../../public/images/Language.png'
+import Language from  '/images/Language.png'
 import { NavLink } from 'react-router-dom'
-import ProfileFoto from '../../public/images/ProfileFoto.png'
+import ProfileFoto from '/images/ProfileFoto.png'
 import { useLocation } from 'react-router-dom'
 function Navbar() {
   const [IsActive, setActive] = useState(false)
