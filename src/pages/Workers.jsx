@@ -173,7 +173,7 @@ function Workers() {
       <div className={`WorkersModal p-[5px] bg-[#d9d9d9bc] fixed inset-0 flex items-center justify-center ${isModalDelte ? 'WorkersModalActive' : ''}`}>
         <div ref={modalRef2} className='Modal bg-customBg rounded-[16px] p-[30px] w-[360px] text-center'>
           <h2 className='text-btnColor text-[26px] font-[600]'>
-            Xodim qo’shish
+          O'chirish ?
           </h2>
          <div className='flex items-center justify-center gap-[20px] mt-[20px]'>
             <button onClick={OpenModal2} className='text-black bg-btnColor px-[20px] py-[5px] rounded-[16px] border-2 border-btnColor hover:bg-transparent hover:text-white transition duration-500 '>
