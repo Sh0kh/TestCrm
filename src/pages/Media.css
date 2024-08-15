@@ -242,6 +242,16 @@
     .ProjectTable table{
         width: 600px;
     }
+
+    .FinanseSamllModal{
+        display: none !important;
+    }
+    .Finance__delete__btn{
+        display: block !important;
+    }
+    .finance__deletBtn{
+        display: none;
+    }
 }
 @media(max-width:400px){
     .Finance__Wrapper h2{

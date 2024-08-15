@@ -1,14 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import Calendar from '/images/FinanceCalendar.svg'
 import Yers from '/images/FinanceYers.svg'
 // import Setting from '../../public/images/DashboardSetting.png'
 function Finance() {
-
+  const modalRef2 = useRef(null);
   const [showCard, setShowCard] = useState(true);
   const [showCard1, setShowCard1] = useState(true);
   const [showCard2, setShowCard2] = useState(true);
   const [showCard3, setShowCard3] = useState(true);
-
+  const [isSmallModal, setSmallModal] = useState(false)
+const [isDeleteModal, setDeleteModal] = useState(false)
   const handleChangeCard = () => {
     setShowCard(false);
     setTimeout(() => {
@@ -16,7 +17,12 @@ function Finance() {
       setShowCard1(!showCard1);
     }, 300);
   };
-
+  const OpenSmallModal = () =>{
+    setSmallModal(!isSmallModal)
+  }
+  const DeleteModal = () =>{
+    setDeleteModal(!isDeleteModal)
+  }
   const handleChangeCard2 = () => {
     setShowCard2(false);
     setTimeout(() => {
@@ -24,6 +30,28 @@ function Finance() {
       setShowCard3(!showCard3);
     }, 300);
   };
+  const handleClickOutside = (e) => {
+
+    if (modalRef2.current && !modalRef2.current.contains(e.target)) {
+      AllDeleteModal();
+    }
+  };
+
+  useEffect(() => {
+    if (isDeleteModal) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isDeleteModal]);
+  
+  const AllDeleteModal = () =>{
+    // OpenSmallModal()
+    DeleteModal()
+  }
   return (
     <div className='Finance w-full pb-[50px]'>
       <div className='mt-[50px]'>
@@ -197,14 +225,22 @@ function Finance() {
                     350$
                   </span>
                 </td>
-                <td className='pt-[25px]'>
-                  <button className='cursor-pointer' >
+                <td className='pt-[25px] relative'>
+                  <button  onClick={OpenSmallModal} className='finance__deletBtn cursor-pointer' >
                     <svg xmlns="http://www.w3.org/2000/svg" width="5" height="19" viewBox="0 0 5 19" fill="none">
                       <circle cx="2.5" cy="2.5" r="2.5" fill="black" />
                       <circle cx="2.5" cy="9.5" r="2.5" fill="black" />
                       <circle cx="2.5" cy="16.5" r="2.5" fill="black" />
                     </svg>
                   </button>
+                  <button onClick={DeleteModal} className='Finance__delete__btn flex items-center justify-center bg-[#FEE2D6] p-[5px] rounded-[4px]'>
+                      <svg className='text-[25px]' xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" d="M7 3h2a1 1 0 0 0-2 0M6 3a2 2 0 1 1 4 0h4a.5.5 0 0 1 0 1h-.564l-1.205 8.838A2.5 2.5 0 0 1 9.754 15H6.246a2.5 2.5 0 0 1-2.477-2.162L2.564 4H2a.5.5 0 0 1 0-1zm1 3.5a.5.5 0 0 0-1 0v5a.5.5 0 0 0 1 0zM9.5 6a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 .5-.5m-4.74 6.703A1.5 1.5 0 0 0 6.246 14h3.508a1.5 1.5 0 0 0 1.487-1.297L12.427 4H3.573z"></path></svg>
+                      </button>
+                  <div className={` FinanseSamllModal w-[70px] h-[50px] pr-[10px] py-[9px] absolute top-[9px] right-[-90px] z-0 hidden   ${isSmallModal ? 'SamllModalActive': ''} `}>
+                      <button onClick={DeleteModal} className= ' flex items-center justify-center bg-[#FEE2D6] p-[5px] rounded-[4px]'>
+                      <svg className='text-[25px]' xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" d="M7 3h2a1 1 0 0 0-2 0M6 3a2 2 0 1 1 4 0h4a.5.5 0 0 1 0 1h-.564l-1.205 8.838A2.5 2.5 0 0 1 9.754 15H6.246a2.5 2.5 0 0 1-2.477-2.162L2.564 4H2a.5.5 0 0 1 0-1zm1 3.5a.5.5 0 0 0-1 0v5a.5.5 0 0 0 1 0zM9.5 6a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 .5-.5m-4.74 6.703A1.5 1.5 0 0 0 6.246 14h3.508a1.5 1.5 0 0 0 1.487-1.297L12.427 4H3.573z"></path></svg>
+                      </button>
+                  </div>  
                 </td>
               </tr>
               <tr className='mt-[25px]'>
@@ -222,18 +258,37 @@ function Finance() {
                     350$
                   </span>
                 </td>
-                <td className='pt-[25px]'>
-                  <button className='cursor-pointer' >
+                <td className='pt-[25px] relative'>
+                  <button   className='finance__deletBtn cursor-pointer' >
                     <svg xmlns="http://www.w3.org/2000/svg" width="5" height="19" viewBox="0 0 5 19" fill="none">
                       <circle cx="2.5" cy="2.5" r="2.5" fill="black" />
                       <circle cx="2.5" cy="9.5" r="2.5" fill="black" />
                       <circle cx="2.5" cy="16.5" r="2.5" fill="black" />
                     </svg>
                   </button>
+                  <button onClick={DeleteModal} className='Finance__delete__btn flex items-center justify-center bg-[#FEE2D6] p-[5px] rounded-[4px]'>
+                      <svg className='text-[25px]' xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" d="M7 3h2a1 1 0 0 0-2 0M6 3a2 2 0 1 1 4 0h4a.5.5 0 0 1 0 1h-.564l-1.205 8.838A2.5 2.5 0 0 1 9.754 15H6.246a2.5 2.5 0 0 1-2.477-2.162L2.564 4H2a.5.5 0 0 1 0-1zm1 3.5a.5.5 0 0 0-1 0v5a.5.5 0 0 0 1 0zM9.5 6a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 .5-.5m-4.74 6.703A1.5 1.5 0 0 0 6.246 14h3.508a1.5 1.5 0 0 0 1.487-1.297L12.427 4H3.573z"></path></svg>
+                      </button>
+
                 </td>
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+      <div className={`WorkersModal p-[5px] bg-[#d9d9d9bc] fixed inset-0 flex items-center justify-center ${isDeleteModal ? 'WorkersModalActive' : ''}`}>
+        <div ref={modalRef2} className='Modal bg-customBg rounded-[16px] p-[30px] w-[360px] text-center'>
+          <h2 className='text-btnColor text-[26px] font-[600]'>
+          O'chirish ?
+          </h2>
+         <div className='flex items-center justify-center gap-[20px] mt-[20px]'>
+            <button onClick={AllDeleteModal} className='text-black bg-btnColor px-[20px] py-[5px] rounded-[16px] border-2 border-btnColor hover:bg-transparent hover:text-white transition duration-500 '>
+              Ha
+            </button>
+            <button onClick={AllDeleteModal} className='text-black bg-btnColor px-[20px] py-[5px] rounded-[16px] border-2 border-btnColor hover:bg-transparent hover:text-white transition duration-500 '>
+              Yoq
+            </button>
+         </div>
         </div>
       </div>
     </div>
